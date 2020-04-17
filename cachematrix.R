@@ -1,3 +1,7 @@
+## Installing matlib package to perform inverse operation
+install.packages("matlib")
+library(matlib)
+
 ## Function to find the inverse of a matrix
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -26,6 +30,8 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- x$get()
-  m <- solve(data) %*% data
+  m <- inv(data)
   x$setInverse(m)
 }
+
+
